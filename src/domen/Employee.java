@@ -1,20 +1,21 @@
 package domen;
 
+import service.Department;
+
 import java.io.IOException;
 
 public class Employee {
     private String name;
-    private String midName;
     private String surname;
     private String jobTitle;
     private String phoneNumber;
     private int salary;
     private int age;
+    private Department empDep;
 
 
-    public Employee(String name, String midName, String surname, String jobTitle, String phoneNumber, int salary, int age) {
+    public Employee(String name, String surname, String jobTitle, String phoneNumber, int salary, int age) {
         this.name = name;
-        this.midName = midName;
         this.surname = surname;
         this.jobTitle = jobTitle;
         this.phoneNumber = phoneNumber;
@@ -32,14 +33,6 @@ public class Employee {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getMidName() {
-        return midName;
-    }
-
-    public void setMidName(String midName) {
-        this.midName = midName;
     }
 
     public String getSurname() {
@@ -82,11 +75,18 @@ public class Employee {
         this.age = age;
     }
 
+    public Department getEmpDep() {
+        return empDep;
+    }
+
+    public void setEmpDep(Department empDep) {
+        this.empDep = empDep;
+    }
+
     @Override
     public String toString() {
         return "\nEmployee{" +
                 "name='" + name + '\'' +
-                ", midName='" + midName + '\'' +
                 ", surname='" + surname + '\'' +
                 ", jobTitle='" + jobTitle + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
@@ -98,10 +98,10 @@ public class Employee {
 //    @Override
 //    public String toString() {
 //        return String.format("\nEmployee{" +
-//                        "name='%s', midName='%s', surname='%s'" +
+//                        "name='%s', surname='%s'" +
 //                        ", job title='%s', phone number='%s'" +
 //                        ", salary=%d, age=%d}'",
-//                name, midName, surname, jobTitle, phoneNumber, salary, getAge());
+//                name, surname, jobTitle, phoneNumber, salary, getAge());
 //    }
 
 
@@ -150,6 +150,7 @@ public class Employee {
             return 0;
         }
     }
+
 
 
 }
