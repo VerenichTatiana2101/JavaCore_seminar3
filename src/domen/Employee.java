@@ -115,6 +115,23 @@ public class Employee {
     }
 
     /**
+     * Задача: Создать метод, повышающий
+     * зарплату всем сотрудникам старше 45 лет на
+     * 5000. Метод должен принимать в качестве
+     * параметра массив сотрудников.
+     * @param employees массив сотрудников
+     * @param sumAllowance размер повышения
+     * @param age возраст
+     */
+    public static void addMoneyToSalary(Employee[] employees, int sumAllowance, int age) {
+        for (int i = 0; i < employees.length; i++) {
+            if (employees[i].getAge() > age) {
+                employees[i].allowance(sumAllowance);
+            }
+        }
+    }
+
+    /**
      * Написать прототип компаратора - метод внутри класса сотрудника, сравнивающий
      * две даты, представленные в виде трёх чисел гггг-мм-дд, без использования
      * условного оператора

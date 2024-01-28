@@ -20,7 +20,7 @@ public class Main {
 
         System.out.println(Arrays.toString(list));
 //        EmployeeUtils.addMoneyToSalary(list);
-        EmployeeUtils.addMoneyToSalary(list, 5000, 45);
+        Employee.addMoneyToSalary(list, 5000, 45);
 
         System.out.println("\n--------------------зарплата добавлена----------------------");
         System.out.println(Arrays.toString(list));
@@ -33,5 +33,9 @@ public class Main {
         System.out.println("Сравнение двух дат: " + Arrays.toString(firstDate) + " и " + Arrays.toString(secondDate) + " ");
         System.out.println("0 - равны, -1 - вторая старше, 1 - первая старше");
         System.out.println(Employee.comparing(firstDate, secondDate));
+
+        Supervisor.addMoneyToSalary(list, 5000, 45);
+        System.out.println("\n---------зарплата добавлена ещё раз, но только простым рабочим-----------");
+        System.out.println(Arrays.toString(list));
     }
 }
