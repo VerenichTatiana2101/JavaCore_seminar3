@@ -1,3 +1,5 @@
+import comparators.AgeComparator;
+import comparators.AgeSalaryComparator;
 import domen.Employee;
 import domen.EmployeeUtils;
 import domen.Supervisor;
@@ -5,9 +7,8 @@ import service.Branch;
 import service.Department;
 import service.Organization;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+import java.util.Collections;
 
 public class Main {
     public static void main(String[] args) {
@@ -65,5 +66,20 @@ public class Main {
 
 //        System.out.println(organization);
 //        System.out.println(branch1);
+
+        /**
+         * Написать компаратор - метод внутри класса сотрудника,
+         * сравнивающий сотрудников по произвольному параметру.
+         */
+        AgeComparator comparator = new AgeComparator();
+        int result = comparator.compare(tatiana, oleg);
+        if (result < 0) {
+            System.out.println(tatiana.getName() + " младше, чем " + oleg.getName());
+        } else if (result > 0) {
+            System.out.println(tatiana.getName() + " старше, чем " + oleg.getName());
+        } else {
+            System.out.println(tatiana.getName() + " и " + oleg.getName() + " одного возраста");
+        }
+
     }
 }
